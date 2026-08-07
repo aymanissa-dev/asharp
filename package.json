@@ -1,0 +1,30 @@
+{
+  "name": "a-sharp",
+  "version": "1.0.0",
+  "description": "A# (ASHARP) is a TypeScript-first framework for building fast, scalable web applications. It delivers an integrated developer experience with built-in tooling, modern architecture, and seamless migration from React, enabling teams to build production-ready apps with confidence.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aymanissa-dev/asharp.git"
+  },
+  "keywords": [
+    "typescript",
+    "framework",
+    "react",
+    "web",
+    "cross-platform",
+    "asharp"
+  ],
+  "author": {
+    "name": "Ayman Issa",
+    "url": "https://aymanissa.dev"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aymanissa-dev/asharp/issues"
+  },
+  "homepage": "https://github.com/aymanissa-dev/asharp#readme"
+}
