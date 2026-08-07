@@ -1,0 +1,11 @@
+{
+  "name": "@asharp/cli",
+  "version": "0.0.1",
+  "description": "Command-line interface for the A# (ASHARP) framework.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Ayman Issa",
+    "url": "https://aymanissa.dev"
+  }
+}

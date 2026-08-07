@@ -2,6 +2,9 @@
   "name": "a-sharp",
   "version": "1.0.0",
   "description": "A# (ASHARP) is a TypeScript-first framework for building fast, scalable web applications. It delivers an integrated developer experience with built-in tooling, modern architecture, and seamless migration from React, enabling teams to build production-ready apps with confidence.",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
