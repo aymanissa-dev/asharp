@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+import * as readline from "node:readline/promises";
+import { stdin as input, stdout as output } from "node:process";
+
 const args = process.argv.slice(2);
 const command = args[0];
 
@@ -20,31 +23,52 @@ Run "asharp <command> --help" for details on a specific command.
 `);
 }
 
-switch (command) {
-  case "create":
-    console.log("→ create command received (not implemented yet)");
-    break;
+async function runCreate(): Promise<void> {
+  const rl = readline.createInterface({ input, output });
 
-  case "dev":
-    console.log("→ dev command received (not implemented yet)");
-    break;
+  const projectName = await rl.question("What's your project named? ");
 
-  case "build":
-    console.log("→ build command received (not implemented yet)");
-    break;
+  rl.close();
 
-  case "preview":
-    console.log("→ preview command received (not implemented yet)");
-    break;
-
-  case undefined:
-  case "--help":
-  case "-h":
-    printHelp();
-    break;
-
-  default:
-    console.error(`Unknown command: "${command}"\n`);
-    printHelp();
+  if (!projectName.trim()) {
+    console.error("\nProject name cannot be empty.");
     process.exit(1);
+  }
+
+  console.log(
+    `\n→ Creating project "${projectName.trim()}"... (not implemented yet)`,
+  );
 }
+
+async function main(): Promise<void> {
+  switch (command) {
+    case "create":
+      await runCreate();
+      break;
+
+    case "dev":
+      console.log("→ dev command received (not implemented yet)");
+      break;
+
+    case "build":
+      console.log("→ build command received (not implemented yet)");
+      break;
+
+    case "preview":
+      console.log("→ preview command received (not implemented yet)");
+      break;
+
+    case undefined:
+    case "--help":
+    case "-h":
+      printHelp();
+      break;
+
+    default:
+      console.error(`Unknown command: "${command}"\n`);
+      printHelp();
+      process.exit(1);
+  }
+}
+
+main();
