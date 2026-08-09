@@ -1,0 +1,16 @@
+{
+  "name": "@asharp/core",
+  "version": "0.0.1",
+  "description": "Core application lifecycle for the A# (ASHARP) framework.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Ayman Issa",
+    "url": "https://aymanissa.dev"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
