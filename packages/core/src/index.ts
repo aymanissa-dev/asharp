@@ -71,3 +71,24 @@ export function jsx<TProps>(
 // The automatic JSX runtime requires both "jsx" (single child) and
 // "jsxs" (multiple children) exports. For now both behave identically.
 export const jsxs = jsx;
+
+/**
+ * Renders a ComponentOutput into a real DOM element and mounts it
+ * into the given container. This is an early, minimal renderer —
+ * it does not yet support nested children, event handling, or
+ * re-rendering on state change.
+ */
+export function render(output: ComponentOutput, container: Element): void {
+  const element = document.createElement(output.type);
+
+  for (const [key, value] of Object.entries(output.props)) {
+    if (key === "children") {
+      element.textContent = String(value);
+    } else {
+      element.setAttribute(key, String(value));
+    }
+  }
+
+  container.innerHTML = "";
+  container.appendChild(element);
+}
