@@ -22,7 +22,7 @@ A# standardizes that path into one framework:
   familiar if you know React
 - **Backend**: structured APIs, dependency injection, and conventions in
   the spirit of Angular/Spring Boot/.NET — without their typical
-  scaffolding slowness or mastery friction
+  scaffolding slowness or decision friction
 - **One language throughout** — TypeScript only, frontend and backend,
   so nothing you learn is wasted switching sides of the stack
 - **Official, integrated tooling** — no assembling a router, a backend
@@ -30,10 +30,19 @@ A# standardizes that path into one framework:
 
 ## Status
 
-A# is early and under active development. The CLI can currently scaffold
-a new project folder; the component model, backend/API layer, and routing
-are not yet implemented. See [ROADMAP.md](./ROADMAP.md) for what's done
-and what's next.
+A# is early and under active development.
+
+Working today:
+
+- `asharp create [name]` scaffolds a real, runnable TypeScript project
+- A#'s own JSX runtime — components written in `.tsx` compile through
+  A#'s transform (not React's) into real DOM output
+- Components can compose JSX and render actual visible content in a
+  browser (proven manually; not yet wired through `asharp dev`)
+
+Not yet implemented: local state, event handling, routing, styling
+integration, a real dev server/bundler, and the entire backend/API
+layer. See [ROADMAP.md](./ROADMAP.md) for the full breakdown.
 
 ## Getting Started
 
