@@ -40,17 +40,6 @@ export type Component<TProps = Record<string, never>> = (
   props: TProps,
 ) => ComponentOutput<TProps>;
 
-export interface WelcomeProps {
-  name: string;
-}
-
-export const Welcome: Component<WelcomeProps> = (props) => {
-  return {
-    type: "Welcome",
-    props,
-  };
-};
-
 /**
  * A#'s JSX factory function. Every JSX element compiles into a call
  * to this function (via the "react-jsx" transform, pointed at this
@@ -83,7 +72,8 @@ export function render(output: ComponentOutput, container: Element): void {
 
   for (const [key, value] of Object.entries(output.props)) {
     if (key === "children") {
-      element.textContent = String(value);
+      const children = Array.isArray(value) ? value : [value];
+      element.textContent = children.join("");
     } else {
       element.setAttribute(key, String(value));
     }
@@ -91,4 +81,14 @@ export function render(output: ComponentOutput, container: Element): void {
 
   container.innerHTML = "";
   container.appendChild(element);
+}
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [tagName: string]: Record<string, unknown>;
+    }
+
+    type Element = ComponentOutput<any>;
+  }
 }
