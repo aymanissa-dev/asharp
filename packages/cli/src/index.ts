@@ -25,6 +25,69 @@ Run "asharp <command> --help" for details on a specific command.
 `);
 }
 
+function getTemplateFiles(projectName: string): Record<string, string> {
+  return {
+    "package.json": JSON.stringify(
+      {
+        name: projectName,
+        version: "0.0.1",
+        private: true,
+        type: "module",
+        scripts: {
+          build: "tsc",
+          start: "node dist/index.js",
+        },
+        devDependencies: {
+          typescript: "^7.0.2",
+          "@types/node": "^24.0.0",
+        },
+      },
+      null,
+      2,
+    ),
+
+    "tsconfig.json": JSON.stringify(
+      {
+        compilerOptions: {
+          target: "ES2022",
+          module: "ESNext",
+          moduleResolution: "Bundler",
+          outDir: "dist",
+          rootDir: "src",
+          strict: true,
+          declaration: true,
+          esModuleInterop: true,
+          skipLibCheck: true,
+          types: ["node"],
+        },
+        include: ["src"],
+      },
+      null,
+      2,
+    ),
+
+    "src/index.ts": `// This is a placeholder starter file.
+// A#'s component model, routing, and framework core are not yet
+// implemented — see ROADMAP.md in the A# repository for progress.
+
+console.log("Hello from ${projectName} — an A# project (placeholder).");
+`,
+  };
+}
+
+async function writeTemplateFiles(
+  targetDir: string,
+  projectName: string,
+): Promise<void> {
+  const files = getTemplateFiles(projectName);
+
+  for (const [relativePath, content] of Object.entries(files)) {
+    const fullPath = path.join(targetDir, relativePath);
+    await fs.mkdir(path.dirname(fullPath), { recursive: true });
+    await fs.writeFile(fullPath, content, "utf-8");
+  }
+}
+
 async function runCreate(): Promise<void> {
   let projectName = args[1];
 
@@ -55,9 +118,14 @@ async function runCreate(): Promise<void> {
   }
 
   await fs.mkdir(targetDir);
+  await writeTemplateFiles(targetDir, trimmedName);
 
-  console.log(`\n✔ Created folder: ${trimmedName}`);
+  console.log(`\n✔ Created project: ${trimmedName}`);
   console.log(`  ${targetDir}`);
+  console.log(`\nNext steps:`);
+  console.log(`  cd ${trimmedName}`);
+  console.log(`  npm install`);
+  console.log(`  npm run build && npm start`);
 }
 
 async function main(): Promise<void> {
