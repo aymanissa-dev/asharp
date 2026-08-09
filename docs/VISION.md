@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/logo.png" alt="A# logo" width="96" />
+</div>
+
 # VISION.md
 
 ## What A# Is
@@ -118,3 +122,7 @@ just against what feels technically interesting to build. If a
 feature doesn't serve the core promise — React familiarity, backend
 completeness, one language throughout — it likely doesn't belong in
 A#, regardless of how interesting it is to build.
+
+---
+
+← [Back to README](../README.md) · [Official Site](https://aymanissa-dev.github.io/asharp/)

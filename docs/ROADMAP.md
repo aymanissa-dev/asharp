@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/logo.png" alt="A# logo" width="96" />
+</div>
+
 # ROADMAP.md
 
 This roadmap reflects actual progress, not aspirational status. If a
@@ -11,6 +15,7 @@ box isn't checked, it isn't built yet.
 - [x] Write ROADMAP.md
 - [x] Write CONTRIBUTING.md
 - [x] Build official site (docs/index.html, docs.html, contributing.html, developer.html)
+- [x] Define and document brand kit (DESIGN.md, BRANDING.md)
 
 ## Phase 1 — CLI Foundation
 
@@ -77,3 +82,7 @@ solid — see VISION.md for why:
 - DevTools browser extension
 - File-based routing vs. config-based routing decision
 - Prisma-style ORM (explicitly not planned — see ARCHITECTURE.md)
+
+---
+
+← [Back to README](../README.md) · [Official Site](https://aymanissa-dev.github.io/asharp/)

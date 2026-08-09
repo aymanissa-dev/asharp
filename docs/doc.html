@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Docs — A# (ASHARP)</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="brand"
+          ><img src="assets/logo.png" alt="A#" />A#</a
+        >
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="docs.html">Docs</a>
+          <a href="contributing.html">Contributing</a>
+          <a href="developer.html">Developer</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="block" style="border-top: none; padding-top: var(--sp-6)">
+      <div class="container reveal">
+        <div class="markdown-body" id="doc-content">
+          <p class="loading">Loading…</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        MIT © <a href="https://aymanissa.dev">Ayman Issa</a> —
+        <a href="https://github.com/aymanissa-dev/asharp"
+          >github.com/aymanissa-dev/asharp</a
+        >
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file");
+      const contentEl = document.getElementById("doc-content");
+
+      if (!file) {
+        contentEl.innerHTML = '<p class="loading">No document specified.</p>';
+      } else {
+        fetch(file)
+          .then((res) => {
+            if (!res.ok) throw new Error(file + " not found");
+            return res.text();
+          })
+          .then((markdown) => {
+            contentEl.innerHTML = marked.parse(markdown);
+            const heading = contentEl.querySelector("h1");
+            if (heading)
+              document.getElementById("page-title").textContent =
+                heading.textContent + " — A#";
+          })
+          .catch((err) => {
+            contentEl.innerHTML =
+              '<p class="loading">Could not load ' +
+              file +
+              " — " +
+              err.message +
+              "</p>";
+          });
+      }
+    </script>
+  </body>
+</html>

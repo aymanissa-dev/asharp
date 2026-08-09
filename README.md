@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="docs/assets/logo.png" alt="A# logo" width="96" />
+</div>
+
 # A# (ASHARP)
 
 **A full-stack TypeScript framework for building web, mobile, desktop, and backend applications — one language, one framework, from UI to API.**
@@ -39,10 +43,12 @@ Working today:
   A#'s transform (not React's) into real DOM output
 - Components can compose JSX and render actual visible content in a
   browser (proven manually; not yet wired through `asharp dev`)
+- An official site (`docs/`) — Home, Docs, Contributing, and Developer
+  pages, with the full brand kit applied
 
 Not yet implemented: local state, event handling, routing, styling
 integration, a real dev server/bundler, and the entire backend/API
-layer. See [ROADMAP.md](./ROADMAP.md) for the full breakdown.
+layer. See [docs/ROADMAP.md](./docs/ROADMAP.md) for the full breakdown.
 
 ## Getting Started
 
@@ -50,14 +56,18 @@ layer. See [ROADMAP.md](./ROADMAP.md) for the full breakdown.
 npx asharp create my-app
 ```
 
-_(Full getting-started docs are coming as the framework stabilizes.)_
+_(Full getting-started docs are coming as the framework stabilizes —
+see [docs](https://aymanissa-dev.github.io/asharp/docs) for the current CLI workflow.)_
 
 ## Learn More
 
-- [VISION.md](./VISION.md) — what A# is, and what it deliberately is not
-- [ARCHITECTURE.md](./ARCHITECTURE.md) — how the framework is structured
-- [ROADMAP.md](./ROADMAP.md) — current progress and what's next
-- [CONTRIBUTING.md](./CONTRIBUTING.md) — how to contribute
+- [Official Site](https://aymanissa-dev.github.io/asharp/) — the full A# site: home, docs, contributing, developer profile
+- [docs/VISION.md](./docs/VISION.md) — what A# is, and what it deliberately is not
+- [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) — how the framework is structured
+- [docs/ROADMAP.md](./docs/ROADMAP.md) — current progress and what's next
+- [docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md) — how to contribute
+- [docs/DESIGN.md](./docs/DESIGN.md) — design tokens and system behind the site
+- [docs/BRANDING.md](./docs/BRANDING.md) — logo usage and visual identity
 
 ## License
 

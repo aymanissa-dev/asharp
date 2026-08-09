@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/logo.png" alt="A# logo" width="96" />
+</div>
+
 # CONTRIBUTING.md
 
 Thanks for your interest in contributing to A#. This project is early
@@ -31,9 +35,9 @@ This is an npm workspaces monorepo. Each package lives under
 ## Working on a Package
 
 ```bash
-cd packages/cli
-npx tsc          # compile
-npx tsc --noEmit # type-check only, no output files
+cd packages/cli    # or packages/core
+npx tsc            # compile
+npx tsc --noEmit   # type-check only, no output files
 node dist/index.js <command>   # run the compiled CLI directly
 ```
 
@@ -48,6 +52,9 @@ node dist/index.js <command>   # run the compiled CLI directly
   `packages/cli/src/index.ts` for the expected style.
 - **Compiled output (`dist/`) is never committed.** It's generated
   from `src/` and is already covered by `.gitignore`.
+- **Visual/brand changes** (site, logo, colors) must match
+  [DESIGN.md](./DESIGN.md) and [BRANDING.md](./BRANDING.md) — no new
+  accent colors, fonts, or one-off styling outside the token system.
 
 ## Commit Messages
 
@@ -72,3 +79,7 @@ direction is still actively taking shape.
 ## Questions
 
 Open an issue — there's no other contributor channel set up yet.
+
+---
+
+← [Back to README](../README.md) · [Official Site](https://aymanissa-dev.github.io/asharp/)

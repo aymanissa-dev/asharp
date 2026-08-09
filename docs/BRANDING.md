@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/logo.png" alt="A# logo" width="140" />
+</div>
+
 # BRANDING.md — A#
 
 ## Name
@@ -24,33 +28,38 @@ and why plainly — it doesn't lean on hype ("revolutionary",
 - **Developer First** — built by developers, for developers
 - **Modular by Design** — composable, scalable, and future-ready
 - **Performance** — fast, efficient, and reliable by default
+- **Open & Community** — open source, built together
 
 ## Visual Identity
 
 - **Dark-first.** Electric Green (`#00FF7A`) on True Black
   (`#0A0A0A`) is the primary combination. A# has no official light
   theme yet.
-- **Electric Green is the one signature accent** — used for primary
-  actions, the logo, and key emphasis. Never diluted by other bright
-  colors competing for attention.
-- **Satoshi for headings, SF Pro Display for body, JetBrains Mono for
-  code** — never mix these roles (don't set body copy in Satoshi, or
-  headings in the monospace font).
+- **Full 5-shade green palette** — Electric Green, Neon Lime, Matrix
+  Green, Deep Green, Forest Green — used for depth and gradients, not
+  just one flat green everywhere.
+- **Satoshi for headings and UI/body text, JetBrains Mono for code**
+  — never mix these roles.
 
 ## Logo Usage
 
 - The mark fuses `#` and `A` — structure, modularity, clarity,
   forward movement.
-- Always rendered in Electric Green on a dark (True Black/Charcoal)
-  background, or solid white for single-color contexts.
-- Minimum clear space around the mark: equal to the mark's own width.
-- Don't recolor, rotate, skew, or add effects (drop shadows, outlines)
-  beyond what's in `assets/logo.png`.
+- **Variations**: primary (green), monochrome light, monochrome dark,
+  app icon (square).
+- Minimum size: 16–24px. Clearspace equal to the mark's own width.
+- ✅ Use clearspace · ✅ Use on dark or light backgrounds · ✅ Maintain
+  minimum size
+- ❌ Don't rotate · ❌ Don't change colors
 - Consistent across all surfaces: app icon, CLI icon, npm package
   badge, OG/social image, GitHub avatar.
 
 ## What to Avoid
 
 - Stock "tech" imagery (circuit boards, abstract particle networks)
-- Introducing new accent colors outside the defined semantic palette
+- Introducing new accent colors outside the defined green palette
 - Light backgrounds/light theme (not yet designed)
+
+---
+
+← [Back to README](../README.md) · [Official Site](https://aymanissa-dev.github.io/asharp/)
