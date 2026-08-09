@@ -11,8 +11,11 @@
   "bin": {
     "asharp": "dist/index.js"
   },
+  "dependencies": {
+    "@asharp/core": "^0.0.1"
+  },
   "devDependencies": {
-    "@types/node": "^26.2.0",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "@types/node": "^24.0.0"
   }
 }

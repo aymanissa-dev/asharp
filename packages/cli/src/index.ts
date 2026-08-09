@@ -4,6 +4,7 @@ import * as readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
+import { createApplication } from "@asharp/core";
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -134,9 +135,12 @@ async function main(): Promise<void> {
       await runCreate();
       break;
 
-    case "dev":
-      console.log("→ dev command received (not implemented yet)");
+    case "dev": {
+      const app = createApplication({ name: "A# Dev Server" });
+      app.start();
+      console.log("(Real dev server behavior not implemented yet.)");
       break;
+    }
 
     case "build":
       console.log("→ build command received (not implemented yet)");
