@@ -16,22 +16,34 @@ box isn't checked, it isn't built yet.
 - [x] Set up monorepo with npm workspaces
 - [x] Create `@asharp/cli` package with TypeScript build pipeline
 - [x] `asharp create [name]` — scaffolds a project folder, with both
-      interactive prompt and positional-argument support
+      interactive prompt and positional-argument support, plus a
+      real runnable starter template (package.json, tsconfig.json,
+      src/index.ts)
 - [x] `asharp` shows help text; rejects unknown commands clearly
-- [ ] `asharp create` generates actual starter files (currently
-      creates an empty folder only)
-- [ ] `asharp dev` — starts a development server
-- [ ] `asharp build` — produces a production build
-- [ ] `asharp preview` — serves a production build locally
+- [x] `asharp dev` / `build` / `preview` — wired to `@asharp/core`
+      with purpose-appropriate messaging (not yet real dev
+      server/build output/preview serving)
+- [ ] `asharp dev` — actually starts a live development server
+- [ ] `asharp build` — actually produces a production bundle
+- [ ] `asharp preview` — actually serves a production build locally
 
 ## Phase 2 — Frontend Component Model
 
-- [ ] Define `createApplication()` entry point and app lifecycle
-- [ ] Component model: typed components, props, JSX-like authoring
+- [x] Define `createApplication()` entry point and app lifecycle
+- [x] Component model: typed `Component<TProps>` / `ComponentOutput`
+- [x] JSX support: A#'s own `jsx`/`jsxs` runtime, `jsxImportSource`
+      pointed at `@asharp/core`, `.tsx` compiles through A#, not React
+- [x] DOM rendering: `render()` mounts real DOM nodes, proven working
+      in an actual browser, including visible text content
+- [x] Components can compose JSX with intrinsic tags (e.g.
+      `<h1>Welcome, {props.name}</h1>`)
 - [ ] Local component state
+- [ ] Event handling (clicks, input, etc.)
 - [ ] Routing (officially integrated, no external router required)
 - [ ] Styling support: CSS and Tailwind CSS
 - [ ] Error boundaries and dev error overlay
+- [ ] Real bundler/dev-server integration (currently proven only via
+      manual `serve` + browser import maps, not `asharp dev` itself)
 
 ## Phase 3 — Backend/API Layer
 
