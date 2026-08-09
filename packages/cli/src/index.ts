@@ -142,13 +142,21 @@ async function main(): Promise<void> {
       break;
     }
 
-    case "build":
-      console.log("→ build command received (not implemented yet)");
+    case "build": {
+      const app = createApplication({ name: "A# Build" });
+      console.log(`[A#] Preparing to build application: "${app.config.name}"`);
+      console.log("(Real build output not implemented yet.)");
       break;
+    }
 
-    case "preview":
-      console.log("→ preview command received (not implemented yet)");
+    case "preview": {
+      const app = createApplication({ name: "A# Preview" });
+      console.log(
+        `[A#] Preparing to preview application: "${app.config.name}"`,
+      );
+      console.log("(Real preview server not implemented yet.)");
       break;
+    }
 
     case undefined:
     case "--help":
