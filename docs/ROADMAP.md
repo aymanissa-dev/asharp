@@ -10,6 +10,7 @@ box isn't checked, it isn't built yet.
 - [x] Write README.md
 - [x] Write ROADMAP.md
 - [x] Write CONTRIBUTING.md
+- [x] Build official site (docs/index.html, docs.html, contributing.html, developer.html)
 
 ## Phase 1 — CLI Foundation
 

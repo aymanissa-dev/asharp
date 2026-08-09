@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer — A# (ASHARP)</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .social-icons {
+        display: flex;
+        gap: var(--sp-2);
+        margin-top: var(--sp-3);
+      }
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--slate);
+        border-radius: var(--radius);
+        color: var(--gray);
+        transition:
+          color 0.3s var(--ease),
+          border-color 0.3s var(--ease);
+      }
+      .social-icons a:hover {
+        color: var(--green-electric);
+        border-color: var(--green-electric);
+      }
+      .social-icons svg {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="brand"
+          ><img src="assets/logo.png" alt="A#" />A#</a
+        >
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="docs.html">Docs</a>
+          <a href="contributing.html">Contributing</a>
+          <a href="developer.html" class="active">Developer</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="block" style="border-top: none; padding-top: var(--sp-6)">
+      <div class="container reveal">
+        <div class="profile">
+          <img class="avatar" src="assets/ayman.png" alt="Ayman Issa" />
+          <div class="profile-info">
+            <h2>Ayman Issa</h2>
+            <p class="role">
+              Software Engineer &amp; Developer Advocate — Nairobi, Kenya
+            </p>
+            <p class="bio">
+              <!-- Placeholder — replace with your own bio -->
+              Building A# from the ground up: CLI, JSX runtime, and the
+              full-stack framework behind it. Focused on a disciplined,
+              minimalist approach to shipping production-ready software.
+            </p>
+            <div class="social-icons">
+              <a
+                href="https://github.com/aymanissa-dev/asharp"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A10.5 10.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://x.com/aymanissa_dev"
+                target="_blank"
+                rel="noopener"
+                aria-label="X (Twitter)"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.9 2H22l-7.6 8.7L23.3 22H16.9l-5-6.5-5.7 6.5H2.9l8.1-9.3L2 2h6.6l4.5 6 5.8-6zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aymanissa-dev/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.5-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2 2 0 110-4.1 2 2 0 010 4.1zM7 20.4H3.6V9H7v11.4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="container reveal">
+        <h2>Why I'm building A#</h2>
+        <p class="body-text">
+          <!-- Placeholder — replace with your own words -->
+          I kept running into the same wall: becoming "full-stack" meant
+          learning a frontend framework, then a completely separate backend
+          ecosystem, then stitching them together — or reaching for a
+          backend-as-a-service tool just to skip the backend entirely. A# is my
+          attempt to fix that: one language, one framework, from the interface
+          all the way down to the API.
+        </p>
+        <div class="cta" style="justify-content: flex-start">
+          <a class="btn btn-primary" href="https://aymanissa.dev"
+            >Visit Portfolio →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        MIT © <a href="https://aymanissa.dev">Ayman Issa</a> —
+        <a href="https://github.com/aymanissa-dev/asharp"
+          >github.com/aymanissa-dev/asharp</a
+        >
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>

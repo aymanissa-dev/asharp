@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contributing — A# (ASHARP)</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .brand-showcase {
+        display: flex;
+        align-items: center;
+        gap: var(--sp-4);
+        border: 1px solid var(--slate);
+        border-radius: var(--radius);
+        padding: var(--sp-4);
+        background: var(--charcoal);
+        flex-wrap: wrap;
+        margin-bottom: var(--sp-4);
+      }
+      .brand-showcase img {
+        width: 120px;
+        height: 120px;
+      }
+      .swatches {
+        display: flex;
+        gap: 10px;
+        margin-top: var(--sp-2);
+        flex-wrap: wrap;
+      }
+      .swatch {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid var(--slate);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="brand"
+          ><img src="assets/logo.png" alt="A#" />A#</a
+        >
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="docs.html">Docs</a>
+          <a href="contributing.html" class="active">Contributing</a>
+          <a href="developer.html">Developer</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="block" style="border-top: none; padding-top: var(--sp-6)">
+      <div class="container reveal">
+        <div class="status-badge">Contributing</div>
+        <h2
+          style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-top: var(--sp-2)"
+        >
+          Help build A#
+        </h2>
+        <p class="sub">
+          Branch off, never commit to <code>main</code> — the maintainer reviews
+          and merges every PR. Full workflow in the guide below.
+        </p>
+
+        <div class="brand-showcase">
+          <img src="assets/logo.png" alt="A# official logo" />
+          <div>
+            <h3 style="margin: 0 0 6px">Official Brand Kit</h3>
+            <p style="margin: 0; color: var(--gray); max-width: 460px">
+              Electric Green on True Black. Satoshi for headings and UI,
+              JetBrains Mono for code. Full usage rules and clearspace
+              requirements in the Branding guide.
+            </p>
+            <div class="swatches">
+              <div
+                class="swatch"
+                style="background: #00ff7a"
+                title="Electric Green"
+              ></div>
+              <div
+                class="swatch"
+                style="background: #a7ff00"
+                title="Neon Lime"
+              ></div>
+              <div
+                class="swatch"
+                style="background: #39d353"
+                title="Matrix Green"
+              ></div>
+              <div
+                class="swatch"
+                style="background: #00b341"
+                title="Deep Green"
+              ></div>
+              <div
+                class="swatch"
+                style="background: #009933"
+                title="Forest Green"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="cta"
+          style="justify-content: flex-start; margin-bottom: var(--sp-5)"
+        >
+          <a class="btn btn-primary" href="BRANDING.md"
+            >Full Branding Guide →</a
+          >
+          <a class="btn btn-secondary" href="DESIGN.md">Design System</a>
+        </div>
+
+        <h3>Before You Start</h3>
+        <p class="body-text">
+          A# has a defined direction — read
+          <a href="VISION.md">VISION.md</a> and
+          <a href="ARCHITECTURE.md">ARCHITECTURE.md</a> before proposing a
+          feature. For anything beyond a small fix, open an issue first.
+        </p>
+
+        <h3 style="margin-top: var(--sp-4)">Local Setup</h3>
+        <div class="terminal" style="margin-top: var(--sp-2)">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-filename">terminal</span>
+          </div>
+          <div class="terminal-body" style="grid-template-columns: 1fr">
+            <div class="terminal-pane output">
+              $ git clone https://github.com/aymanissa-dev/asharp.git $ cd
+              asharp $ npm install
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--sp-4)">Submitting Changes</h3>
+        <p class="body-text">
+          Create a branch → make your change → confirm the affected package
+          compiles cleanly (<code>npx tsc --noEmit</code>) → open a pull
+          request. Only the maintainer merges into <code>main</code>.
+        </p>
+
+        <div
+          class="cta"
+          style="justify-content: flex-start; margin-top: var(--sp-5)"
+        >
+          <a class="btn btn-primary" href="CONTRIBUTING.md"
+            >Full Contributing Guide →</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/aymanissa-dev/asharp/issues"
+            >Open an Issue</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        MIT © <a href="https://aymanissa.dev">Ayman Issa</a> —
+        <a href="https://github.com/aymanissa-dev/asharp"
+          >github.com/aymanissa-dev/asharp</a
+        >
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>

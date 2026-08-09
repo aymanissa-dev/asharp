@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docs — A# (ASHARP)</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="brand"
+          ><img src="assets/logo.png" alt="A#" />A#</a
+        >
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="docs.html" class="active">Docs</a>
+          <a href="contributing.html">Contributing</a>
+          <a href="developer.html">Developer</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="block" style="border-top: none; padding-top: var(--sp-6)">
+      <div class="container reveal">
+        <div class="status-badge">
+          <span class="dot"></span> Getting Started
+        </div>
+        <h2
+          style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-top: var(--sp-2)"
+        >
+          Get up and running with A#
+        </h2>
+        <p class="sub">
+          The current CLI workflow — everything here is real, working code.
+        </p>
+
+        <div class="terminal" style="margin-bottom: var(--sp-4)">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-filename">terminal</span>
+          </div>
+          <div class="terminal-body" style="grid-template-columns: 1fr">
+            <div class="terminal-pane output">
+              $ npx asharp create my-app <span class="ok">✔</span> Created
+              project: my-app Next steps: cd my-app npm install npm run build
+              &amp;&amp; npm start
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--sp-5)">
+          What <code>create</code> gives you
+        </h3>
+        <p class="body-text">
+          A real, minimal TypeScript project — <code>package.json</code>,
+          <code>tsconfig.json</code> (strict mode, ESM), and a runnable
+          <code>src/index.ts</code>. No framework code inside it yet; A#'s
+          component model and rendering live in <code>@asharp/core</code>, which
+          the CLI is wired to but doesn't yet inject into generated projects.
+        </p>
+
+        <h3 style="margin-top: var(--sp-5)">Feature status</h3>
+        <p class="sub">
+          An honest snapshot — built vs. still ahead. Full detail in the
+          Roadmap.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="feature-status done">Built</span>
+            <div>
+              <h3>CLI scaffolding</h3>
+              <p>
+                <code>asharp create [name]</code> generates a real, runnable
+                TypeScript project — interactive prompt or positional argument.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status done">Built</span>
+            <div>
+              <h3>Application lifecycle</h3>
+              <p>
+                <code>createApplication()</code> in <code>@asharp/core</code> —
+                A#'s entry point.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status done">Built</span>
+            <div>
+              <h3>Typed component model</h3>
+              <p>
+                <code>Component&lt;TProps&gt;</code> — typed, composable
+                functions from props to output.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status done">Built</span>
+            <div>
+              <h3>A#'s own JSX runtime</h3>
+              <p>
+                Real <code>.tsx</code> syntax compiles through A#'s transform,
+                not React's.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status done">Built</span>
+            <div>
+              <h3>DOM rendering</h3>
+              <p>
+                Components render real, visible content in the browser — proven
+                end-to-end.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status wired">Wired</span>
+            <div>
+              <h3><code>asharp dev / build / preview</code></h3>
+              <p>
+                All call <code>@asharp/core</code>'s lifecycle with
+                purpose-appropriate messaging. Not yet a real dev server,
+                bundler, or preview server.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status pending">Ahead</span>
+            <div>
+              <h3>State &amp; events</h3>
+              <p>
+                Local component state and event handling (clicks, input) — not
+                yet built.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status pending">Ahead</span>
+            <div>
+              <h3>Routing &amp; styling</h3>
+              <p>
+                Integrated routing and CSS/Tailwind support — not yet built.
+              </p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-status pending">Ahead</span>
+            <div>
+              <h3>Backend/API layer</h3>
+              <p>
+                Dependency injection, REST/GraphQL-style APIs, JWT auth,
+                PostgreSQL/MongoDB/Redis — not yet started.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta" style="margin-top: var(--sp-5)">
+          <a class="btn btn-primary" href="ROADMAP.md">Full Roadmap →</a>
+          <a class="btn btn-secondary" href="VISION.md">Vision</a>
+          <a class="btn btn-secondary" href="ARCHITECTURE.md">Architecture</a>
+          <a class="btn btn-secondary" href="../README.md">README</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        MIT © <a href="https://aymanissa.dev">Ayman Issa</a> —
+        <a href="https://github.com/aymanissa-dev/asharp"
+          >github.com/aymanissa-dev/asharp</a
+        >
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>

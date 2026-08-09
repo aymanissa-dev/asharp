@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A# (ASHARP) — A full-stack TypeScript framework</title>
+    <meta
+      name="description"
+      content="A# is a TypeScript-first framework for building modern, scalable, cross-platform applications with simplicity and power."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="brand"
+          ><img src="assets/logo.png" alt="A#" />A#</a
+        >
+        <nav class="main-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="docs.html">Docs</a>
+          <a href="contributing.html">Contributing</a>
+          <a href="developer.html">Developer</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="glow" id="glow"></div>
+      <div class="container">
+        <div class="hero-copy">
+          <div class="status-badge">
+            <span class="dot"></span> v0.0.1 — Early Development
+          </div>
+          <h1>
+            Build once.<br /><span class="accent">Run anywhere.</span
+            ><span class="cursor">_</span>
+          </h1>
+          <p class="tagline">
+            A# is a TypeScript-first framework for building modern, scalable,
+            cross-platform applications with simplicity and power.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="docs.html">Get Started →</a>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/aymanissa-dev/asharp"
+              >GitHub</a
+            >
+          </div>
+          <div class="install-line">npx asharp create my-app</div>
+        </div>
+        <div class="hero-mark">
+          <img src="assets/logo.png" alt="A# mark" />
+        </div>
+      </div>
+    </section>
+
+    <section class="block" style="border-top: none">
+      <div class="container reveal">
+        <div class="card-grid">
+          <div class="feature-card">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
+            </svg>
+            <h3>Performance</h3>
+            <p>Fast, efficient, and reliable by default.</p>
+          </div>
+          <div class="feature-card">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 2 2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+            <h3>Modular by Design</h3>
+            <p>Composable, scalable, and future-ready.</p>
+          </div>
+          <div class="feature-card">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M8 6 2 12l6 6M16 6l6 6-6 6" />
+            </svg>
+            <h3>Developer First</h3>
+            <p>Built by developers, for developers.</p>
+          </div>
+          <div class="feature-card">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="9" cy="7" r="4" />
+              <path d="M17 11a4 4 0 1 0-3-6.6" />
+              <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.9" />
+            </svg>
+            <h3>Open &amp; Community</h3>
+            <p>Open source. Built together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="container reveal">
+        <h2>Familiar, if you know React</h2>
+        <p class="sub">
+          Real syntax. Real code. Real output — nothing on this page is staged.
+        </p>
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-filename">welcome.tsx</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-pane code">
+              <span class="kw">export interface</span> WelcomeProps { name:
+              <span class="kw">string</span>; }
+
+              <span class="kw">export const</span> Welcome:
+              Component&lt;WelcomeProps&gt; = (props) =&gt; {
+              <span class="kw">return</span> &lt;h1&gt;Welcome,
+              {props.name}&lt;/h1&gt;; };
+            </div>
+            <div class="terminal-pane output">
+              $ npx asharp create my-app <span class="ok">✔</span> Created
+              project: my-app Next steps: cd my-app npm install npm run build
+              &amp;&amp; npm start
+            </div>
+          </div>
+          <div class="terminal-caption">
+            Real syntax. Real code. Real output.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="container reveal">
+        <h2>Why A# Exists</h2>
+        <p class="sub">The problem A# is trying to solve.</p>
+        <p class="body-text">
+          Becoming a "full-stack developer" today usually means learning several
+          unrelated ecosystems — a frontend framework, then a separate backend
+          framework, then wiring them together, or leaning on a
+          backend-as-a-service tool just to skip learning a real backend at all.
+        </p>
+        <p class="body-text">
+          A# standardizes that path: one TypeScript framework, frontend to
+          backend, so the skills you build on one side of the stack directly
+          transfer to the other.
+        </p>
+        <a class="btn btn-secondary" href="VISION.md">Read the Vision →</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        A# — Build Once. Run Anywhere. &nbsp;|&nbsp; TypeScript-first · Open
+        Source · Developer Driven
+        <br /><br />
+        MIT © <a href="https://aymanissa.dev">Ayman Issa</a> —
+        <a href="https://github.com/aymanissa-dev/asharp"
+          >github.com/aymanissa-dev/asharp</a
+        >
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>
