@@ -23,7 +23,7 @@ export function createApplication(config: ApplicationConfig): Application {
 
 /**
  * The output a component produces. This is a temporary, minimal
- * stand-in until JSX compilation is set up — not real HTML/DOM yet,
+ * stand-in until real rendering exists — not real HTML/DOM yet,
  * just enough structure to prove the component concept works.
  * TProps mirrors whatever props shape the originating component used.
  */
@@ -50,3 +50,24 @@ export const Welcome: Component<WelcomeProps> = (props) => {
     props,
   };
 };
+
+/**
+ * A#'s JSX factory function. Every JSX element compiles into a call
+ * to this function (via the "react-jsx" transform, pointed at this
+ * module through jsxImportSource). Mirrors React's automatic JSX
+ * runtime shape: (type, props) => output.
+ */
+export function jsx<TProps>(
+  type: string | Component<TProps>,
+  props: TProps,
+): ComponentOutput<TProps> {
+  if (typeof type === "function") {
+    return type(props);
+  }
+
+  return { type, props };
+}
+
+// The automatic JSX runtime requires both "jsx" (single child) and
+// "jsxs" (multiple children) exports. For now both behave identically.
+export const jsxs = jsx;

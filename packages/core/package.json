@@ -10,6 +10,10 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./jsx-runtime": "./dist/jsx-runtime.js"
+  },
   "devDependencies": {
     "typescript": "^7.0.2"
   }
