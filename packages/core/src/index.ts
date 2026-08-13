@@ -112,6 +112,14 @@ export function state<T>(initial: T): StateHandle<T> {
   };
 }
 
+/**
+ * Mounts a ComponentOutput as real DOM. Props are split into three
+ * categories:
+ *  - "children" becomes text content
+ *  - "on*" props whose value is a function become real event
+ *    listeners (e.g. onClick -> addEventListener("click", ...))
+ *  - everything else becomes a plain HTML attribute
+ */
 function mount(output: ComponentOutput, container: Element): void {
   const element = document.createElement(output.type);
 
@@ -119,6 +127,9 @@ function mount(output: ComponentOutput, container: Element): void {
     if (key === "children") {
       const children = Array.isArray(value) ? value : [value];
       element.textContent = children.join("");
+    } else if (key.startsWith("on") && typeof value === "function") {
+      const eventName = key.slice(2).toLowerCase();
+      element.addEventListener(eventName, value as EventListener);
     } else {
       element.setAttribute(key, String(value));
     }
@@ -132,7 +143,7 @@ function mount(output: ComponentOutput, container: Element): void {
  * Renders a root component into a container, and keeps it updated
  * whenever any state() used inside it changes. This is a full
  * rewipe-and-rebuild on every update — no DOM diffing yet. See
- * ROADMAP.md for the known tradeoff.
+ * ROADMAP.md and ARCHITECTURE.md for the known tradeoff.
  */
 export function render(
   rootFn: () => ComponentOutput,
