@@ -63,9 +63,20 @@ Built as `@asharp/cli`, a TypeScript package compiled to a runnable
   nodes, including text content from JSX children — proven working in
   an actual browser end-to-end
 
-Still planned: local component state, event handling, routing
-(officially integrated, no external router required), and CSS/Tailwind
-styling support.
+### Known Limitation: No DOM Diffing Yet
+
+`state()` triggers a full rewipe-and-rebuild of the container on every
+change — not a diffed update. This was a deliberate choice, not an
+oversight: real diffing (React-style reconciliation) is a substantial,
+separate engineering effort, and getting it subtly wrong causes worse
+bugs than the problem it solves. The tradeoff: transient DOM state
+(input focus, cursor position, scroll position) is lost on every
+re-render. This becomes worth solving once components have real
+interactive inputs where focus-loss is a genuine usability problem —
+not yet the case today.
+
+Still planned: event handling, routing (officially integrated, no
+external router required), and CSS/Tailwind styling support.
 
 ## Backend/API Architecture (Planned)
 

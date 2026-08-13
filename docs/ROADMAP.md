@@ -43,7 +43,12 @@ box isn't checked, it isn't built yet.
       in an actual browser, including visible text content
 - [x] Components can compose JSX with intrinsic tags (e.g.
       `<h1>Welcome, {props.name}</h1>`)
-- [ ] Local component state
+- [x] Local component state (`state()`) — full rewipe-and-rebuild on
+      change, no DOM diffing yet. Loses transient DOM state (input
+      focus, scroll position) on every update. Real diffing is a
+      substantial separate effort — worth revisiting once components
+      have interactive inputs where focus-loss becomes a real
+      usability problem. See ARCHITECTURE.md.
 - [ ] Event handling (clicks, input, etc.)
 - [ ] Routing (officially integrated, no external router required)
 - [ ] Styling support: CSS and Tailwind CSS
