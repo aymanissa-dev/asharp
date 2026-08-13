@@ -61,13 +61,58 @@ export function jsx<TProps>(
 // "jsxs" (multiple children) exports. For now both behave identically.
 export const jsxs = jsx;
 
-/**
- * Renders a ComponentOutput into a real DOM element and mounts it
- * into the given container. This is an early, minimal renderer —
- * it does not yet support nested children, event handling, or
- * re-rendering on state change.
- */
-export function render(output: ComponentOutput, container: Element): void {
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [tagName: string]: Record<string, unknown>;
+    }
+
+    type Element = ComponentOutput<any>;
+  }
+}
+
+// ---------------------------------------------------------------------
+// Local component state
+// ---------------------------------------------------------------------
+//
+// stateSlots holds one value per state() call, in call order.
+// stateIndex resets to 0 at the start of every render pass.
+// currentRerender points at whichever render() call is "live" —
+// calling a StateHandle's .set() re-runs it.
+//
+// This is a real, known constraint (same rule React's hooks follow):
+// state() must be called in the same order on every render. Putting
+// state() inside an `if` or a loop will misalign slots between
+// renders and silently corrupt state.
+
+let stateSlots: unknown[] = [];
+let stateIndex = 0;
+let currentRerender: (() => void) | null = null;
+
+export interface StateHandle<T> {
+  readonly value: T;
+  set(next: T): void;
+}
+
+export function state<T>(initial: T): StateHandle<T> {
+  const index = stateIndex;
+  if (stateSlots[index] === undefined) {
+    stateSlots[index] = initial;
+  }
+  stateIndex++;
+
+  return {
+    get value(): T {
+      return stateSlots[index] as T;
+    },
+    set(next: T): void {
+      stateSlots[index] = next;
+      if (currentRerender) currentRerender();
+    },
+  };
+}
+
+function mount(output: ComponentOutput, container: Element): void {
   const element = document.createElement(output.type);
 
   for (const [key, value] of Object.entries(output.props)) {
@@ -83,12 +128,21 @@ export function render(output: ComponentOutput, container: Element): void {
   container.appendChild(element);
 }
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      [tagName: string]: Record<string, unknown>;
-    }
+/**
+ * Renders a root component into a container, and keeps it updated
+ * whenever any state() used inside it changes. This is a full
+ * rewipe-and-rebuild on every update — no DOM diffing yet. See
+ * ROADMAP.md for the known tradeoff.
+ */
+export function render(
+  rootFn: () => ComponentOutput,
+  container: Element,
+): void {
+  currentRerender = () => {
+    stateIndex = 0;
+    const output = rootFn();
+    mount(output, container);
+  };
 
-    type Element = ComponentOutput<any>;
-  }
+  currentRerender();
 }
