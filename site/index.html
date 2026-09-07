@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A# — The web, structured.</title>
+    <meta
+      name="description"
+      content="A# is a full-stack web framework for building modern applications with HTML, CSS, and JavaScript."
+    />
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <img class="logo-light" src="assets/logo.png" alt="A#" />
+          <img class="logo-dark" src="assets/logo-white.png" alt="A#" />
+          <span>A#</span>
+        </a>
+        <button class="menu-toggle" id="menu-toggle">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <svg
+              data-icon="light"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              />
+            </svg>
+            <svg
+              data-icon="dark"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+            </svg>
+            <svg
+              data-icon="system"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="4" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+    <div class="nav-overlay" id="nav-overlay">
+      <a href="index.html">Home</a>
+      <a href="brand.html">Brand</a>
+      <a href="about.html">About</a>
+      <a
+        href="https://github.com/aymanissa-dev/asharp"
+        target="_blank"
+        rel="noopener"
+        >GitHub ↗</a
+      >
+      <span class="nav-overlay-footer mono">asharp.dev</span>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow reveal">A# / ASharp</p>
+        <h1 class="reveal">The web,<br />structured.</h1>
+        <p class="hero-sub reveal">
+          A full-stack web framework for building modern applications with HTML,
+          CSS, and JavaScript.
+        </p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#get-started">Get Started</a>
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/aymanissa-dev/asharp"
+            target="_blank"
+            rel="noopener"
+            >View on GitHub</a
+          >
+        </div>
+        <div class="install-line reveal">npm install -g @asharp/cli</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">The Product</p>
+        <h2>Four commands define V1.</h2>
+        <div class="terminal-grid">
+          <div class="terminal">
+            <div class="terminal-head">
+              <span></span><span></span><span></span>
+              <p>asharp create</p>
+            </div>
+            <pre class="terminal-body" id="term-create"></pre>
+          </div>
+          <div class="terminal">
+            <div class="terminal-head">
+              <span></span><span></span><span></span>
+              <p>asharp dev</p>
+            </div>
+            <pre class="terminal-body" id="term-dev"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inverted">
+      <div class="container reveal">
+        <blockquote class="philosophy">
+          HTML stays HTML.<br />
+          CSS stays CSS.<br />
+          JavaScript stays JavaScript.<br />
+          A# handles the structure.
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">How A# Works</p>
+        <h2>Strong primitives, structured well.</h2>
+        <table class="model-table">
+          <tbody>
+            <tr>
+              <td class="mono">HTML</td>
+              <td>→</td>
+              <td>Structure</td>
+            </tr>
+            <tr>
+              <td class="mono">CSS</td>
+              <td>→</td>
+              <td>Presentation</td>
+            </tr>
+            <tr>
+              <td class="mono">JavaScript</td>
+              <td>→</td>
+              <td>Behavior</td>
+            </tr>
+            <tr>
+              <td class="mono">A#</td>
+              <td>→</td>
+              <td>Architecture + Organization + Tooling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section inverted">
+      <div class="container reveal">
+        <p class="section-label">Components</p>
+        <h2>HTML, CSS, and JavaScript stay separate — and connected.</h2>
+        <p class="section-copy">
+          Folder name equals component identity. A# automatically associates the
+          matching HTML, CSS, and JavaScript files.
+        </p>
+        <pre class="code-block">
+components/
+└── navbar/
+    ├── navbar.html
+    ├── navbar.css
+    └── navbar.js</pre
+        >
+        <pre class="code-block">&lt;a-navbar&gt;&lt;/a-navbar&gt;</pre>
+        <pre class="code-block">
+export default {
+  mount({ root, props }) {
+    const button = root.querySelector("button");
+    button.addEventListener("click", () =&gt; {
+      console.log("clicked");
+    });
+  },
+  destroy() {
+    // cleanup
+  }
+};</pre
+        >
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">Routing</p>
+        <h2>Filesystem conventions become application structure.</h2>
+        <table class="route-table">
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">src/app/page.html</td>
+              <td class="mono">/</td>
+            </tr>
+            <tr>
+              <td class="mono">src/app/about/page.html</td>
+              <td class="mono">/about</td>
+            </tr>
+            <tr>
+              <td class="mono">src/app/contact/page.html</td>
+              <td class="mono">/contact</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="section-copy">
+          Navigation uses ordinary HTML links. A# intercepts internal navigation
+          via the History API while retaining back/forward browser behavior.
+        </p>
+      </div>
+    </section>
+
+    <section class="section inverted">
+      <div class="container reveal">
+        <p class="section-label">Developer Experience</p>
+        <h2>Errors should teach.</h2>
+        <div class="error-card">
+          <p class="error-title">A# COMPONENT ERROR · A2002</p>
+          <p>Component "navbar" is incomplete.</p>
+          <pre class="error-tree">
+src/components/navbar/
+✓ navbar.html
+✓ navbar.css
+× navbar.js</pre
+          >
+          <p><strong>Expected:</strong> src/components/navbar/navbar.js</p>
+          <p>
+            <strong>Possible fix:</strong> Create navbar.js or remove the
+            incomplete component directory.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">Framework Direction</p>
+        <h2>
+          A batteries-included application framework, not merely a UI library.
+        </h2>
+        <div class="direction-grid">
+          <div>
+            <h3>Structured &amp; Enterprise-Ready</h3>
+            <p>
+              Architecture, dependency injection, services, forms, deep routing,
+              CLI/tooling, enterprise maintainability.
+            </p>
+          </div>
+          <div>
+            <h3>Modern Web Capabilities</h3>
+            <p>
+              File routing, layouts, SSR/SSG, SEO, server features, data
+              loading, production DX.
+            </p>
+          </div>
+          <div>
+            <h3>A# Contribution</h3>
+            <p>
+              HTML-first authoring, CSS-first styling, JavaScript-first
+              behavior, convention over configuration, native web APIs.
+            </p>
+          </div>
+        </div>
+        <p class="section-copy" style="margin-top: 24px">
+          A# borrows principles, not APIs. The framework needs its own coherent
+          architecture.
+        </p>
+      </div>
+    </section>
+
+    <section class="section inverted" id="get-started">
+      <div class="container reveal">
+        <p class="section-label">Get Started</p>
+        <h2>Prove the framework before expanding it.</h2>
+        <pre class="code-block">
+npm install -g @asharp/cli
+asharp create my-app
+cd my-app
+asharp dev</pre
+        >
+        <a
+          class="btn btn-primary"
+          href="https://github.com/aymanissa-dev/asharp"
+          target="_blank"
+          rel="noopener"
+          >View on GitHub</a
+        >
+      </div>
+    </section>
+
+    <section class="section developer-section">
+      <div class="container reveal">
+        <p class="section-label">The Developer</p>
+        <div class="developer-grid">
+          <img
+            class="developer-photo"
+            src="assets/developer.png"
+            alt="Ayman Issa"
+          />
+          <div>
+            <h2>Ayman Issa</h2>
+            <p class="mono role">
+              Software Engineer &amp; Developer Advocate — Nairobi, Kenya
+            </p>
+            <p class="section-copy">
+              <!-- Placeholder — replace with your own words -->
+              Building A# from the ground up: the CLI, the core runtime, and the
+              framework's structured, web-standards-first approach to building
+              applications.
+            </p>
+            <div class="developer-links">
+              <a
+                href="https://github.com/aymanissa-dev/asharp"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+              <a
+                href="https://x.com/aymanissa_dev"
+                target="_blank"
+                rel="noopener"
+                >X</a
+              >
+              <a
+                href="https://www.linkedin.com/in/aymanissa-dev/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a href="https://aymanissa.dev" target="_blank" rel="noopener"
+                >Portfolio</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="mono">A# — The web, structured.</p>
+        <nav class="footer-nav">
+          <a href="brand.html">Brand</a>
+          <a href="about.html">About</a>
+          <a
+            href="https://github.com/aymanissa-dev/asharp"
+            target="_blank"
+            rel="noopener"
+            >GitHub ↗</a
+          >
+        </nav>
+        <p class="mono footer-domain">asharp.dev</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

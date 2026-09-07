@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand — A#</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <img class="logo-light" src="assets/logo.png" alt="A#" />
+          <img class="logo-dark" src="assets/logo-white.png" alt="A#" />
+          <span>A#</span>
+        </a>
+        <button class="menu-toggle" id="menu-toggle">
+          <span class="bars"><span></span><span></span><span></span></span>
+          Menu
+        </button>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <svg
+              data-icon="light"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              />
+            </svg>
+            <svg
+              data-icon="dark"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+            </svg>
+            <svg
+              data-icon="system"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="4" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+    <div class="nav-overlay" id="nav-overlay">
+      <a href="index.html">Home</a>
+      <a href="brand.html">Brand</a>
+      <a href="about.html">About</a>
+      <a
+        href="https://github.com/aymanissa-dev/asharp"
+        target="_blank"
+        rel="noopener"
+        >GitHub ↗</a
+      >
+      <span class="nav-overlay-footer mono">asharp.dev</span>
+    </div>
+
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="eyebrow">Brand Resources</p>
+        <h1>One canonical source of visual truth.</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">Logo</p>
+        <h2>The exact uploaded A# triangular mark is canonical.</h2>
+        <p class="section-copy">
+          It must not be reconstructed, rounded, detached from the hash,
+          recolored, stretched, rotated, or treated with gradients, shadows, or
+          3D effects.
+        </p>
+        <div class="logo-showcase">
+          <div class="logo-tile light-tile">
+            <img
+              src="assets/logo.png"
+              alt="A# black mark on light background"
+            />
+            <p class="mono">Black mark / light background</p>
+            <a class="download-link" href="assets/logo.png" download>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              Download PNG
+            </a>
+          </div>
+          <div class="logo-tile inverted">
+            <img
+              src="assets/logo-white.png"
+              alt="A# white mark on dark background"
+            />
+            <p class="mono">White mark / dark background</p>
+            <a class="download-link" href="assets/logo-white.png" download>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              Download PNG
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inverted">
+      <div class="container reveal">
+        <p class="section-label">Color</p>
+        <h2>Uncompromisingly monochrome.</h2>
+        <p class="section-copy">
+          A# uses only black and white as official brand colors. The identity
+          creates hierarchy through typography, scale, inversion, spacing,
+          borders, geometry, and the product itself — not decorative color.
+        </p>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-fill" style="background: #000000"></div>
+            <div class="color-info">
+              <span class="mono">#000000</span>
+              <button class="copy-hex" data-hex="#000000">Copy</button>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-fill"
+              style="background: #ffffff; border-bottom: 1px solid currentColor"
+            ></div>
+            <div class="color-info">
+              <span class="mono">#FFFFFF</span>
+              <button class="copy-hex" data-hex="#FFFFFF">Copy</button>
+            </div>
+          </div>
+        </div>
+        <a
+          class="download-link"
+          href="assets/asharp-colors.css"
+          download
+          style="margin-top: 20px"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+          </svg>
+          Download colors.css
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">Typography</p>
+        <h2>Three voices. One system.</h2>
+        <div class="type-grid">
+          <div>
+            <p class="type-sample serif">Aa</p>
+            <h3>DM Serif Display</h3>
+            <p class="mono type-role">Ideas</p>
+            <p class="section-copy">
+              Hero headlines, editorial statements, launch campaigns, large
+              quotes.
+            </p>
+            <a
+              class="download-link"
+              href="https://fonts.google.com/specimen/DM+Serif+Display"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              Download on Google Fonts
+            </a>
+          </div>
+          <div>
+            <p class="type-sample sans">Aa</p>
+            <h3>DM Sans</h3>
+            <p class="mono type-role">Communication</p>
+            <p class="section-copy">
+              Primary interface, documentation, navigation, buttons, body copy,
+              forms.
+            </p>
+            <a
+              class="download-link"
+              href="https://fonts.google.com/specimen/DM+Sans"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              Download on Google Fonts
+            </a>
+          </div>
+          <div>
+            <p class="type-sample mono">Aa</p>
+            <h3>DM Mono</h3>
+            <p class="mono type-role">Engineering</p>
+            <p class="section-copy">
+              CLI, code, file paths, package names, versions, error codes,
+              technical metadata.
+            </p>
+            <a
+              class="download-link"
+              href="https://fonts.google.com/specimen/DM+Mono"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              Download on Google Fonts
+            </a>
+          </div>
+        </div>
+        <p class="section-copy" style="margin-top: 24px">
+          DM Sans dominates. DM Serif Display is expressive and selective. DM
+          Mono appears when A# is speaking technically.
+        </p>
+        <pre class="code-block mono">
+&lt;link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=DM+Sans:wght@400;500;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"&gt;</pre
+        >
+      </div>
+    </section>
+
+    <section class="section inverted">
+      <div class="container reveal">
+        <p class="section-label">Visual Language</p>
+        <h2>Structure is the decoration.</h2>
+        <p class="section-copy">
+          A# avoids colorful SaaS conventions. Product screenshots, code,
+          terminal output, rules, typography, and whitespace become the visual
+          material.
+        </p>
+        <div class="direction-grid" style="margin-top: 32px">
+          <div>
+            <h3>Scale</h3>
+            <p>Large editorial statements against small technical metadata.</p>
+          </div>
+          <div>
+            <h3>Inversion</h3>
+            <p>White-on-black and black-on-white sections create rhythm.</p>
+          </div>
+          <div>
+            <h3>Rules</h3>
+            <p>
+              Thin precise dividers organize information without visual noise.
+            </p>
+          </div>
+          <div>
+            <h3>Whitespace</h3>
+            <p>
+              Generous empty space signals confidence and improves scanning.
+            </p>
+          </div>
+          <div>
+            <h3>Geometry</h3>
+            <p>Angular, exact layouts subtly echo the A# mark.</p>
+          </div>
+          <div>
+            <h3>Product-as-Art</h3>
+            <p>
+              CLI output, file trees, routes, and errors are primary brand
+              visuals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <p class="section-label">Incorrect Usage</p>
+        <h2>The restraint is intentional.</h2>
+        <p class="section-copy">
+          The framework simplifies and structures web primitives; the brand does
+          the same visually.
+        </p>
+        <ul class="rules-list">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+            Do not recolor the mark.
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+            Do not stretch or rotate it.
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+            Do not add gradients, shadows, or 3D effects.
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+            Do not detach or recreate the hash.
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+            Do not place the mark on visually noisy backgrounds.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="mono">A# — The web, structured.</p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a
+            href="https://github.com/aymanissa-dev/asharp"
+            target="_blank"
+            rel="noopener"
+            >GitHub ↗</a
+          >
+        </nav>
+        <p class="mono footer-domain">asharp.dev</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

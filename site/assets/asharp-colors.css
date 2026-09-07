@@ -1,0 +1,7 @@
+/* A# Brand — Color Tokens
+   Uncompromisingly monochrome. Black and white only. */
+
+:root {
+  --asharp-black: #000000;
+  --asharp-white: #ffffff;
+}
