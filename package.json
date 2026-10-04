@@ -1,0 +1,20 @@
+{
+  "name": "asharp",
+  "version": "0.1.0",
+  "description": "A# (ASharp) — The web, structured. A full-stack web framework for building modern applications with HTML, CSS, and JavaScript.",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": {
+    "name": "Ayman Issa",
+    "url": "https://aymanissa.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aymanissa-dev/asharp.git"
+  },
+  "homepage": "https://asharp.dev"
+}

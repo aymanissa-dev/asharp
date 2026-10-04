@@ -1,0 +1,12 @@
+{
+  "name": "@asharp/core",
+  "version": "0.1.0",
+  "description": "Core application runtime for the A# framework.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Ayman Issa",
+    "url": "https://aymanissa.dev"
+  },
+  "main": "src/index.js"
+}
