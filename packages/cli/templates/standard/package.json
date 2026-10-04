@@ -1,0 +1,17 @@
+{
+  "name": "{{name}}",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "asharp dev",
+    "build": "asharp build",
+    "preview": "asharp preview"
+  },
+  "dependencies": {
+    "@asharp/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@asharp/cli": "^0.1.0"
+  }
+}

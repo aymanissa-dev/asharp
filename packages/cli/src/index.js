@@ -22,9 +22,11 @@ Run "asharp <command> --help" for details on a specific command.
 
 async function main() {
   switch (command) {
-    case "create":
-      console.log("→ create: not implemented yet");
+    case "create": {
+      const { create } = await import("./commands/create.js");
+      await create(args.slice(1));
       break;
+    }
     case "dev":
       console.log("→ dev: not implemented yet");
       break;
@@ -46,4 +48,7 @@ async function main() {
   }
 }
 
-main();
+main().catch((err) => {
+  console.error(`A# internal error: ${err.message}`);
+  process.exitCode = 1;
+});

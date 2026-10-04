@@ -10,5 +10,12 @@
   },
   "bin": {
     "asharp": "src/index.js"
+  },
+  "files": [
+    "src",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18"
   }
 }
